@@ -1,3 +1,7 @@
+"""Meme Engine Module.
+
+This module provides class with functions to generate memes by overlaying quotes on images.
+"""
 from PIL import Image, ImageDraw, ImageFont
 import os
 import random

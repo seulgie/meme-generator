@@ -1,3 +1,7 @@
+"""DOCX Ingestor Module.
+
+This module provides functionality to parse DOCX files and extract data.
+"""
 from typing import List
 import docx
 from quote_engine.ingestor_interface import IngestorInterface
@@ -10,6 +14,14 @@ class DocxIngestor(IngestorInterface):
 
     @classmethod
     def parse(cls, path: str) -> List[QuoteModel]:
+        """Parse a DOCX file and return its contents as a list of dictionaries.
+
+        Args:
+            file_path (str): The path to the DOCX file.
+
+        Returns:
+            list: A list of dictionaries where keys are column names and values are row data.
+        """
         if not cls.can_ingest(path):
             raise ValueError(f'Cannot ingest file: {path}')
         

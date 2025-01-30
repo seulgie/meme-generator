@@ -1,3 +1,7 @@
+"""PDF Ingestor Module.
+
+This module provides functionality to parse PDF files and extract data.
+"""
 import subprocess
 import os
 from typing import List
@@ -5,20 +9,19 @@ from quote_engine.ingestor_interface import IngestorInterface
 from quote_engine.quote_model import QuoteModel
 
 class PDFIngestor(IngestorInterface):
-    """Quotes Ingestor from PDF files"""
+    """Quotes Ingestor from PDF files."""
 
     allowed_extensions = ['pdf']
 
     @classmethod
     def can_ingest(cls, path: str) -> bool:
-        """Check if the format is PDF"""
+        """Check if the format is PDF."""
         ext = path.split('.')[-1]
         return ext in cls.allowed_extensions
 
     @classmethod
     def parse(cls, path: str) -> List[QuoteModel]:
-        """Converts PDF to text using pdftotext CLI tool."""
-
+        """Convert PDF to text using pdftotext CLI tool."""
         if not cls.can_ingest(path):
             raise Exception(f'Cannot ingest file type: {path}')
 
@@ -27,7 +30,7 @@ class PDFIngestor(IngestorInterface):
 
         # Execute pdftotext using subprocess (PDF → TXT)
         try:
-            subprocess.run(['C:/Users/gkstm/Downloads/Release-24.08.0-0/poppler-24.08.0/Library/bin/pdftotext.exe', path, tmp_txt], check=True)
+            subprocess.run(['pdftotext', path, tmp_txt], check=True)
         except subprocess.CalledProcessError as e:
             print(f"Error during PDF to text conversion: {e}")
             raise

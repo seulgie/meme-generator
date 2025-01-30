@@ -1,3 +1,8 @@
+"""Ingestor Module.
+
+This module provides functionalities to parse various file types
+and extract text data for meme gneeration.
+"""
 from typing import List
 from quote_engine.ingestor_interface import IngestorInterface
 from quote_engine.text_ingestor import TextIngestor
@@ -13,6 +18,14 @@ class Ingestor(IngestorInterface):
 
     @classmethod
     def parse(cls, path: str) -> List[QuoteModel]:
+        """Parse the given file and return extracted text.
+        
+        Args:
+            file_path (str): The path to the file.
+
+        Returns:
+            List[str]: A list of extracted text strings.
+        """
         for ingestor in cls.ingestors:
             if ingestor.can_ingest(path):
                 return ingestor.parse(path)

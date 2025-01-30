@@ -1,3 +1,7 @@
+"""Ingestor Interface Module.
+
+Defines an interface for different ingestor classes to implement.
+"""
 from abc import ABC, abstractmethod
 from typing import List
 from quote_engine.quote_model import QuoteModel
