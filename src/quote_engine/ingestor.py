@@ -1,10 +1,10 @@
 from typing import List
-from QuoteEngine.IngestorInterface import IngestorInterface
-from QuoteEngine.TextIngestor import TextIngestor
-from QuoteEngine.DocxIngestor import DocxIngestor
-from QuoteEngine.PDFIngestor import PDFIngestor
-from QuoteEngine.CSVIngestor import CSVIngestor
-from QuoteEngine.QuoteModel import QuoteModel
+from quote_engine.ingestor_interface import IngestorInterface
+from quote_engine.text_ingestor import TextIngestor
+from quote_engine.docx_ingestor import DocxIngestor
+from quote_engine.pdf_ingestor import PDFIngestor
+from quote_engine.csv_ingestor import CSVIngestor
+from quote_engine.quote_model import QuoteModel
 
 class Ingestor(IngestorInterface):
     """Main ingestor that selects the appropriate strategy."""

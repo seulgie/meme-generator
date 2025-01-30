@@ -1,7 +1,7 @@
 import pandas as pd
 from typing import List
-from QuoteEngine.IngestorInterface import IngestorInterface
-from QuoteEngine.QuoteModel import QuoteModel
+from quote_engine.ingestor_interface import IngestorInterface
+from quote_engine.quote_model import QuoteModel
 
 class CSVIngestor(IngestorInterface):
     """Ingestor for .csv files using pandas."""

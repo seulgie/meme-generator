@@ -1,6 +1,6 @@
 from typing import List
-from QuoteEngine.IngestorInterface import IngestorInterface
-from QuoteEngine.QuoteModel import QuoteModel
+from quote_engine.ingestor_interface import IngestorInterface
+from quote_engine.quote_model import QuoteModel
 
 class TextIngestor(IngestorInterface):
     """Ingestor for .txt files."""

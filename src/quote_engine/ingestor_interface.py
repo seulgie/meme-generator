@@ -1,6 +1,7 @@
 from abc import ABC, abstractmethod
 from typing import List
-from QuoteEngine.QuoteModel import QuoteModel
+from quote_engine.quote_model import QuoteModel
+
 
 class IngestorInterface(ABC):
     """Abstract base class for all ingestors."""

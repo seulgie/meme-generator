@@ -1,7 +1,7 @@
 from typing import List
-import python-docx
-from QuoteEngine.IngestorInterface import IngestorInterface
-from QuoteEngine.QuoteModel import QuoteModel
+import docx
+from quote_engine.ingestor_interface import IngestorInterface
+from quote_engine.quote_model import QuoteModel
 
 class DocxIngestor(IngestorInterface):
     """Ingestor for .docx files."""
@@ -14,7 +14,7 @@ class DocxIngestor(IngestorInterface):
             raise ValueError(f'Cannot ingest file: {path}')
         
         quotes = []
-        doc = python-docx.Document(path)
+        doc = docx.Document(path)
         for para in doc.paragraphs:
             if " - " in para.text:
                 body, author = para.text.strip().split(" - ")

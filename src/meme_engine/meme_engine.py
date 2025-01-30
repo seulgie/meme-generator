@@ -34,7 +34,7 @@ class MemeEngine:
             # Resize image while maintaining aspect ratio
             aspect_ratio = img.height / img.width
             new_height = int(width * aspect_ratio)
-            img = img.resize((width, new_height), Image.ANTIALIAS)
+            img = img.resize((width, new_height), Image.Resampling.LANCZOS)
 
             # Prepare text to overlay
             draw = ImageDraw.Draw(img)
